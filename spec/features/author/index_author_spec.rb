@@ -29,6 +29,12 @@ describe "Index author page", type: :feature do
         end
     end
 
+    it "should display the author with a link to the edit page" do
+        within 'table' do
+            expect(page).to have_link 'Edit', href: edit_author_path(@author)
+        end
+    end
+
     it "should have a link to the new author site" do
         expect(page).to have_link 'New', href: new_author_path
     end
