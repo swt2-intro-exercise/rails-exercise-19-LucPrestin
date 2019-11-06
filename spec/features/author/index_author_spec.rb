@@ -13,11 +13,18 @@ describe "Index author page", type: :feature do
         expect(page).to have_css 'table'
     end
 
-    it "should display the authors according to their name and homepage and have a link to the author's show page" do
-        @author = FactoryBot.create :author 
+    it "should display the table with columns named 'Name' and 'Homepage'" do
         within 'table' do
             expect(page).to have_text 'Name'
             expect(page).to have_text 'Homepage'
+        end
+    end
+
+    it "should display an author with their full name, the homepage and a link to the detail page" do
+        @author = FactoryBot.create :author 
+        within 'table' do
+            expect(page).to have_text 'Alan Turing'
+            expect(page).to have_text 'http://wikipedia.de/Alan_Turing'
             expect(page).to have_link 'Show', href: author_path(@author)
         end
     end
