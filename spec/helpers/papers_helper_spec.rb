@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 # Specs in this file have access to a helper object that includes
-# the AuthorsHelper. For example:
+# the PapersHelper. For example:
 #
-# describe AuthorsHelper do
+# describe PapersHelper do
 #   describe "string concat" do
 #     it "concats two strings with spaces" do
 #       expect(helper.concat_strings("this","that")).to eq("this that")
 #     end
 #   end
 # end
-RSpec.describe AuthorsHelper, type: :helper do
+RSpec.describe PapersHelper, type: :helper do
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Edit author page", type: :feature do
 
     before :each do
-        @author = @author = FactoryBot.create :author
+        @author = FactoryBot.create :author
         visit edit_author_path(@author)
     end
 
