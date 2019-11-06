@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "Index author page", type: :feature do
 
     before :each do
+        @author = FactoryBot.create :author 
         visit authors_path
     end
 
@@ -21,7 +22,6 @@ describe "Index author page", type: :feature do
     end
 
     it "should display an author with their full name, the homepage and a link to the detail page" do
-        @author = FactoryBot.create :author 
         within 'table' do
             expect(page).to have_text 'Alan Turing'
             expect(page).to have_text 'http://wikipedia.de/Alan_Turing'
