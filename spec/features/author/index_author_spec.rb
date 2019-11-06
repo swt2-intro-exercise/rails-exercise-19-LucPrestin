@@ -37,7 +37,7 @@ describe "Index author page", type: :feature do
 
     it "should display the author with a link to delete the author" do
         within 'table' do
-            expect(page).to have_link 'Delete', href: destroy_author_path(@author)
+            expect(page).to have_link 'Delete', href: author_path(@author)
         end
     end
 
