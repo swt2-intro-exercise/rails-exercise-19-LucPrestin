@@ -2,7 +2,7 @@ class PapersController < ApplicationController
   before_action :set_paper, only: [:show, :edit, :update, :destroy]
 
   def index
-    @papers = Paper.all
+    @papers = Paper.publishing_year(params[:year])
   end
 
   def show
