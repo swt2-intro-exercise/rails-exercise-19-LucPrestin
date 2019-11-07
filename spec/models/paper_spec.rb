@@ -22,4 +22,9 @@ RSpec.describe Paper, type: :model do
         paper = Paper.new({title: 'COMPUTING MACHINERY AND INTELLIGENCE', venue: 'Mind 49: 433-460', year: nil})
         expect(paper).to_not be_valid
     end
+
+    it "should be invalid when 'year' isn't a numeric value" do
+        paper = Paper.new({title: 'COMPUTING MACHINERY AND INTELLIGENCE', venue: 'Mind 49: 433-460', year: 'nineteen-fifty'})
+        expect(paper).to_not be_valid
+    end
 end
