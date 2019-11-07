@@ -55,4 +55,11 @@ describe "Index paper page", type: :feature do
         expect(page).to have_link 'New', href: new_paper_path
     end
 
+    it "should not display a paper of year 1950 when the papers are filtered by the year 1968" do
+        visit papers_path(:year => 1968)
+        within 'table' do
+            expect(page).to_not have_text 'COMPUTING MACHINERY AND INTELLIGENCE'
+        end
+    end
+
 end
