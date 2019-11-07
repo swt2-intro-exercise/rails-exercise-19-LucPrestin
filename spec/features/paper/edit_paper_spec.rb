@@ -27,6 +27,10 @@ describe "Edit paper page", type: :feature do
         expect(@paper.title).to eq('COMPUTING THINGIES')
         expect(@paper.venue).to eq('Mind 45: 344-347')
         expect(@paper.year).to eq(2050)
-      end
+    end
+
+    it "should have a multiple select box" do
+        expect(page).to have_css 'select multiple'
+    end
 
 end
