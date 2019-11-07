@@ -30,7 +30,7 @@ describe "Edit paper page", type: :feature do
     end
 
     it "should have a multiple select box" do
-        expect(page).to have_css 'select multiple'
+        expect(page).to have_css 'select'
     end
 
 end
